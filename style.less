@@ -180,13 +180,26 @@ a.well {
     background-color: @Cmainlight;
     border-left: 10px @Csecond solid;
     color: @Cinvert;
+    code {
+	background-color: @Cmain;
+    }
 }
 
 .with-icon {
     padding: 30px;
-    .fa {
+    .pull-left {
 	padding-right: 30px;
     }
+    .pull-right {
+	padding-left: 30px;
+    }
+}
+
+code {
+    background-color: @Cmaindark;
+    color: @Csecond;
+    display: inline-block;
+    margin: 5px;
 }
 
 .table {
