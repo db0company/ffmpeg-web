@@ -33,11 +33,17 @@ body, h1, h2, h3, h4, h5, h6 {
 
 a {
     color: @Csecond;
+    strong {
+	color: @Cinvert;
+    }
+    &:hover {
+	color: @Cseconddark;
+	strong {
+	    color: @Csecond;
+	}
+    }
 }
 
-a:hover {
-    color: @Cseconddark;
-}
  
 main {
     width: @Smain !important;
@@ -51,6 +57,9 @@ h1, h2, h3, h4 {
 
 h1, h2, h3 {
     color: @Csecond;
+    strong {
+	color: @Cinvert;
+    }
 }
 
 h4, h5, h6 {
@@ -97,6 +106,19 @@ h4 {
 	padding: 0 10px;
 	font-style: italic;
 	color: @Cseconddarkdark;
+    }
+    &.example {
+	padding-top: 40px;
+	margin-bottom: 130px;
+	pre {
+	    margin: 50px;
+	    margin-bottom: 30px;
+	    font-size: 1.5em;
+	}
+	.btn {
+	    margin-right: 50px;
+	    margin-bottom: 20px;
+	}
     }
 }
 
@@ -166,9 +188,9 @@ h4 {
 }
 
 // ************************************************************************* //
-// Download page
+// Download & Index page
 
-#download {
+#download, #index {
 
     h4 {
 	margin-top: 180px;
@@ -179,18 +201,20 @@ h4 {
 
     .btn-download-wrapper {
 	text-align: center;
+	margin: 160px auto;
 	.btn {
 	    font-size: 3em;
 	    padding: 3%;
 	    display: inline-block;
-	    margin: 50px auto;
+	    margin-bottom: 5px;
 	}
     }
     h2.description {
-	color: @Csecond;
+	color: @Cinvert;
 	font-size: 2em;
 	font-weight: bold;
-	margin: 50px 0;
+	margin: 120px 50px;
+	line-height: 2em;
 	.label {
 	    font-size: 0.5em;
 	}
