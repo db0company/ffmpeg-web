@@ -83,6 +83,14 @@ h4 {
     color: @Cinvert;
 }
 
+.list-group {
+    .list-group-item {
+	background-color: @Cmainlight;
+	padding: 25px;
+	border-color: @Csecondlight;
+    }
+}
+
 .well {
     background-color: @Cmaindark;
     border-color: @Csecond;
@@ -120,14 +128,51 @@ h4 {
 	    margin-bottom: 20px;
 	}
     }
+    &.well-with-icon {
+	min-height: 136px;
+	.pull-right, .pull-left {
+	    background-color: @Csecond;
+	    color: @Cinvert;
+	    padding: 10px;
+	    border-radius: 5px;
+	    margin: 5px;
+	}
+	.pull-right {
+	    margin-left: 20px;
+	}
+	.pull-left {
+	    margin-right: 20px;
+	}
+    }
 }
 
+a.well {
+    display: block;
+    &:hover {
+	text-decoration: none;
+	opacity: 0.6;
+	/* background-color: @Cmain; */
+	/* border-color: @Csecondlight; */
+	/* &.well-with-icon { */
+	/*     .pull-right, .pull-left { */
+	/* 	background-color: @Csecondlight; */
+	/*     } */
+	/* } */
+    }
+}
 
 .info {
     margin: 10px;
     padding: 10px;
     background-color: @Cmainlight;
     border-left: 10px @Csecond solid;
+}
+
+.with-icon {
+    padding: 30px;
+    .fa {
+	padding-right: 30px;
+    }
 }
 
 .table {
@@ -158,6 +203,7 @@ h4 {
 	    margin-right: 8px;
 	}
 	&:hover {
+	    color: #fff;
 	    img {
 		opacity: 1;
 	    }

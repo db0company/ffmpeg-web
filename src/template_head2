@@ -26,9 +26,8 @@
               <a href="download.html">Download</a>
             </li>
             <li>
-              <a href="discover.html">Discover</a>
+              <a href="about.html">Discover</a>
 	       <ul>
-		 <li><a href="news.html">News</a></li>
 		 <li><a href="about.html">About</a></li>
 		 <li><a href="projects.html">Projects</a></li>
                </ul>
