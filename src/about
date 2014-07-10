@@ -89,7 +89,7 @@
 
 <br><br>
 
-<ul class="list-group">
+<ul class="list-group list-group-big">
   <li class="list-group-item"><strong><a href="libavutil.html">libavutil</a></strong> is a library containing functions for
     simplifying programming, including random number generators, data
     structures, mathematics routines, core multimedia utilities, and much
