@@ -3,19 +3,24 @@
 SRCS = about bugreports consulting contact donations documentation download \
        olddownload index legal projects shame security archive
 
-TARGETS = $(addsuffix .html,$(addprefix htdocs/,$(SRCS))) htdocs/main.rss
+BOWER_PACKAGES = bower.json
+BOWER_COMPONENTS = htdocs/components
+CSS_SRCS = style.less
+CSS_TARGET = htdocs/css/style.min.css
 
-PAGE_DEPS = src/template_head1 src/template_head2 src/template_footer
+TARGETS = $(BOWER_COMPONENTS) $(addsuffix .html,$(addprefix htdocs/,$(SRCS))) htdocs/main.rss $(CSS_TARGET)
 
+PAGE_DEPS = src/template_head1 src/template_head2 src/template_head3 \
+            src/template_footer1 src/template_footer2
 
 all: $(TARGETS)
 
 clean:
-	rm -f $(TARGETS)
+	rm -rf $(TARGETS)
 
-htdocs/%.html: src/% src/%_title $(PAGE_DEPS)
-	cat src/template_head1 $<_title src/template_head2 $< \
-	src/template_footer > $@
+htdocs/%.html: src/% src/%_title src/%_js $(PAGE_DEPS)
+	cat src/template_head1 $<_title src/template_head2 $<_title src/template_head3 $< \
+	src/template_footer1 $<_js src/template_footer2 > $@
 
 htdocs/main.rss: htdocs/index.html
 	echo '<?xml version="1.0" encoding="UTF-8" ?>' > $@
@@ -35,5 +40,11 @@ X' >> $@
 	echo '</channel>' >> $@
 	echo '</rss>' >> $@
 
+
+$(BOWER_COMPONENTS): $(BOWER_PACKAGES)
+	bower install
+
+$(CSS_TARGET): $(CSS_SRCS)
+	lessc --yui-compress $(CSS_SRCS) > $@
 
 .PHONY: all clean

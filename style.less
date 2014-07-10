@@ -1,0 +1,265 @@
+// Author: db0 (db0company@gmail.com, http://db0.fr/)
+
+// ************************************************************************* //
+// COLORS
+
+@Cmain: #313131;
+@Cmaindark: darken(@Cmain, 5%);
+@Cmaindarkdark: darken(@Cmaindark, 5%);
+@Cmainlight: lighten(@Cmain, 5%);
+@Cborder: #101010;
+@Cinvert: darken(#fff, 10%);
+@Csecond: darken(#4cae4c, 0%);
+@Cseconddark: darken(@Csecond, 10%);
+@Cseconddarkdark: darken(@Cseconddark, 10%);
+@Csecondlight: lighten(@Csecond, 15%);
+
+// ************************************************************************* //
+// SIZES
+
+@Smain: 100%;
+
+// ************************************************************************* //
+// Global
+
+body {
+    background-color: @Cmain;
+    color: @Cinvert;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Helvetica Neue", Helvetica, Verdana, Tahoma, sans-serif;
+}
+
+a {
+    color: @Csecond;
+}
+
+a:hover {
+    color: @Cseconddark;
+}
+ 
+main {
+    width: @Smain !important;
+    min-height: 600px;
+    margin: auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    color: @Csecond;
+}
+
+h4, h5, h6 {
+    color: @Cseconddark;
+}
+
+h1 {
+  border-bottom: 4px @Csecond solid;
+  padding: 20px 2%;
+}
+
+h3 {
+  border-bottom: 2px @Csecond solid;
+  padding: 15px 1%;
+}
+
+h4 {
+    border-bottom: 1px solid @Cinvert;
+    padding: 10px 0;
+    margin: 20px 0;
+    color: @Cinvert;
+}
+
+.well {
+    background-color: @Cmaindark;
+    border-color: @Csecond;
+    color: @Cseconddark;
+    hr {
+	border-color: @Cseconddark;
+    }
+    h3 {
+	margin: 5px 0 15px 0;
+	border: 0;
+	padding: 0;
+    }
+    a {
+	color: @Csecondlight;
+    }
+    a.btn {
+	color: white;
+    }
+    small {
+	display: block;
+	padding: 0 10px;
+	font-style: italic;
+	color: @Cseconddarkdark;
+    }
+}
+
+
+.info {
+    margin: 10px;
+    padding: 10px;
+    background-color: @Cmainlight;
+    border-left: 10px @Csecond solid;
+}
+
+.table {
+    margin: 20px 0;
+    border-radius: 4px;
+    th, td, tr {
+	border: 1px solid @Cmaindarkdark;
+    }
+    tr {
+	th {
+	    background-color: @Cmainlight;
+	    border-bottom: 2px solid @Cinvert;
+	}
+    }
+    tr:nth-child(odd) {
+	background-color: @Cmaindark;
+    }
+}
+
+// ************************************************************************* //
+// Menu side bar nav
+
+#sidebar-wrapper, .navbar {
+    background-color: @Cmaindarkdark;
+    .sidebar-brand, .navbar-brand {
+	img {
+	    opacity: 0.6;
+	    margin-right: 8px;
+	}
+	&:hover {
+	    img {
+		opacity: 1;
+	    }
+	}
+    }
+    .sidebar-nav {
+	li ul {
+	    list-style-type: none;
+	    padding: 0;
+	    li {
+		line-height: 20px;
+		a {
+		    padding-left: 20px;
+		}
+	    }
+	}
+    }
+}
+
+.content-header {
+    height: auto;
+    h1 {
+	display: block;
+	margin: 0;
+	margin-bottom: 20px;
+	line-height: normal;
+    }
+}
+
+// ************************************************************************* //
+// Download page
+
+#download {
+
+    h4 {
+	margin-top: 180px;
+    }
+    h4.first {
+	margin-top: 20px;
+    }
+
+    .btn-download-wrapper {
+	text-align: center;
+	.btn {
+	    font-size: 3em;
+	    padding: 3%;
+	    display: inline-block;
+	    margin: 50px auto;
+	}
+    }
+    h2.description {
+	color: @Csecond;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 50px 0;
+	.label {
+	    font-size: 0.5em;
+	}
+    }
+    .btn-build {
+	padding: 5px;
+	margin: 5px;
+	display: inline-block;
+	border-radius: 2px;
+	img {
+	    max-width: 80%;
+	    display: block;
+	    margin: auto;
+	}
+    }
+    @linuxcolor: #e43;
+    @windowscolor: #06a;
+    @maccolor: #0a6;
+    .btn-build[href="#build-linux"] {
+	background-color: @linuxcolor;
+	&:hover {
+	    color: lighten(@linuxcolor, 10%);
+	}
+    }
+    .btn-build[href="#build-windows"] {
+	background-color: @windowscolor;
+	&:hover {
+	    color: lighten(@windowscolor, 10%);
+	}
+    }
+    .btn-build[href="#build-mac"] {
+	background-color: @maccolor;
+	&:hover {
+	    color: lighten(@maccolor, 10%);
+	}
+    }
+    .tab-content {
+	margin-top: 20px;
+    }
+    #build-linux {
+	h3 {
+	    color: @linuxcolor;
+	}
+    }
+    #build-windows {
+	h3 {
+	    color: @windowscolor;
+	}
+    }
+    #build-mac {
+	h3 {
+	    color: @maccolor;
+	}
+    }
+}
+
+// ************************************************************************* //
+// Footer
+
+footer {
+    background-color: @Cmaindark;
+    border-top: 1px @Cborder solid;
+    padding: 20px ((100%-@Smain)/2);
+    a {
+	display: block;
+    }
+    img[alt="FFmpeg"] {
+	width: 50%;
+	display: block;
+	margin: auto;
+    }
+}

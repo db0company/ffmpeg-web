@@ -1,0 +1,15 @@
+
+        </div> <!-- page-content-inset -->
+      </main>
+    </div> <!-- wrapper -->
+
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+      });
+    </script>

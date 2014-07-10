@@ -1,33 +1,71 @@
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="default.css" />
+</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/simple-sidebar.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+
     <link href="/main.rss" rel="alternate" type="application/rss+xml" title="ffmpeg.org" />
-</head>
+  </head>
+  <body>
 
-<body>
+    <div id="wrapper">
 
-<div id="container">
+      <nav id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href=".">
+	      <img src="img/ffmpeg_20.png" alt="FFmpeg" />
+	      FFmpeg</a>
+          </li>
+            <li>
+              <a href="download.html">Download</a>
+            </li>
+            <li>
+              <a href="discover.html">Discover</a>
+	       <ul>
+		 <li><a href="news.html">News</a></li>
+		 <li><a href="about.html">About</a></li>
+		 <li><a href="projects.html">Projects</a></li>
+               </ul>
+            </li>
+            <li>
+              <a href="documentation.html">Documentation</a>
+	       <ul>
+		 <li><a href="documentation.html#command-line">Command line</a></li>
+		 <li><a href="documentation.html#components">Components</a></li>
+		 <li><a href="documentation.html#libraries">Libraries</a></li>
+		 <li><a href="documentation.html#more">More</a></li>
+               </ul>
+            </li>
+            <li>
+              <a href="community.html">Community</a>
+	       <ul>
+		 <li><a href="bugreports.html">Bug reports</a></li>
+		 <li><a href="download.html#sources">Source Code</a></li>
+		 <li><a href="tets.html">Tets</a></li>
+		 <li><a href="contact.html#IRCChannels">IRC</a></li>
+		 <li><a href="contact.html#Forums">Forums</a></li>
+		 <li><a href="contact.html#MailingLists">Mailing Lists</a></li>
+               </ul>
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0">More</a>
+	       <ul>
+		 <li><a href="donations.html">Donations</a></li>
+		 <li><a href="consulting.html">Hire Developers</a></li>
+		 <li><a href="contact.html">Contact</a></li>
+		 <li><a href="security.html">Security</a></li>
+               </ul>
+            </li>
+	</ul>
+      </nav>
 
-<div id="banner">
-<a href="index.html">
-<img src="ffmpeg-logo.png" alt="FFmpeg" />
-</a>
-</div>
-
-<div id="navbar">
-<a href="index.html">News</a> |
-<a href="about.html">About</a> |
-<a href="download.html">Download</a> |
-<a href="documentation.html">Documentation</a> |
-<a href="bugreports.html">Bug Reports</a> |
-<a href="contact.html">Contact</a> |
-<a href="donations.html">Donations</a> |
-<a href="consulting.html">Consulting</a> |
-<a href="projects.html">Projects</a> |
-<a href="legal.html">Legal</a> |
-<a href="security.html">Security</a> |
-<a href="http://fate.ffmpeg.org">FATE</a>
-</div>
-
-<div id="body">
-
-
+      <div id="page-content-wrapper">
+	<header class="content-header">
+          <h1>
+            <a id="menu-toggle" href="#" class="btn btn-success"><i class="fa fa-reorder"></i></a>
