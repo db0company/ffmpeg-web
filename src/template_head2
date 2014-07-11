@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.min.css" />
 
     <link href="/main.rss" rel="alternate" type="application/rss+xml" title="ffmpeg.org" />
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="img/favicon3d.ico" />
   </head>
   <body>
 
@@ -20,7 +20,7 @@
       <nav id="sidebar-wrapper">
 	<ul class="sidebar-nav">
           <li class="sidebar-brand"><a href=".">
-	      <img src="img/ffmpeg_white_20.png" alt="FFmpeg" />
+	      <img src="img/ffmpeg3d_white_20.png" alt="FFmpeg" />
 	      FFmpeg</a>
           </li>
           <li><a href="about.html">About</a></li>
