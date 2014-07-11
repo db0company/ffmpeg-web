@@ -7,12 +7,14 @@
 @Cmaindark: darken(@Cmain, 5%);
 @Cmaindarkdark: darken(@Cmaindark, 5%);
 @Cmainlight: lighten(@Cmain, 5%);
+@Cmainlightlight: lighten(@Cmainlight, 50%);
 @Cborder: #101010;
 @Cinvert: darken(#fff, 10%);
 @Csecond: darken(#4cae4c, 0%);
 @Cseconddark: darken(@Csecond, 10%);
 @Cseconddarkdark: darken(@Cseconddark, 10%);
 @Csecondlight: lighten(@Csecond, 15%);
+@Csecondlightlight: lighten(@Csecondlight, 20%);
 
 // ************************************************************************* //
 // SIZES
@@ -37,7 +39,7 @@ a {
 	color: @Cinvert;
     }
     &:hover {
-	color: @Cseconddark;
+	color: @Csecondlight;
 	strong {
 	    color: @Csecond;
 	}
@@ -56,7 +58,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2, h3 {
-    color: @Csecond;
+    color: @Cmainlightlight;
     strong {
 	color: @Cinvert;
     }
@@ -67,12 +69,12 @@ h4, h5, h6 {
 }
 
 h1 {
-  border-bottom: 4px @Csecond solid;
+  border-bottom: 4px @Cmainlightlight solid;
   padding: 20px 2%;
 }
 
 h3 {
-  border-bottom: 2px @Csecond solid;
+  border-bottom: 2px @Cmainlightlight solid;
   padding: 15px 1%;
 }
 
@@ -86,7 +88,7 @@ h4 {
 .list-group {
     .list-group-item {
 	background-color: @Cmainlight;
-	border-color: @Csecondlight;
+	border-color: black;
     }
     &.list-group-big .list-group-item {
 	padding: 25px;
@@ -103,10 +105,13 @@ h4 {
 
 .well {
     background-color: @Cmaindark;
-    border-color: @Csecond;
-    color: @Cseconddark;
+    border-color: black;
+    color: @Cmainlightlight;
     strong {
 	color: @Cinvert;
+    }
+    code {
+	background-color: @Cmain;
     }
     hr {
 	border-color: @Cseconddark;
@@ -117,7 +122,7 @@ h4 {
 	padding: 0;
     }
     a {
-	color: @Csecondlight;
+	color: @Csecond;
     }
     a.btn {
 	color: white;
@@ -126,7 +131,6 @@ h4 {
 	display: block;
 	padding: 0 10px;
 	font-style: italic;
-	color: @Cseconddarkdark;
     }
     &.example {
 	padding-top: 40px;
@@ -163,7 +167,7 @@ a.well {
     display: block;
     &:hover {
 	text-decoration: none;
-	opacity: 0.6;
+	opacity: 0.8;
 	/* background-color: @Cmain; */
 	/* border-color: @Csecondlight; */
 	/* &.well-with-icon { */
@@ -195,9 +199,13 @@ a.well {
     }
 }
 
+dd {
+    margin-left: 20px;
+}
+
 code {
     background-color: @Cmaindark;
-    color: @Csecond;
+    color: @Csecondlight;
     display: inline-block;
     margin: 5px;
 }
@@ -252,11 +260,14 @@ code {
 
 .content-header {
     height: auto;
+    background-color: @Cmaindark;
     h1 {
+	color: @Cinvert;
 	display: block;
 	margin: 0;
 	margin-bottom: 20px;
 	line-height: normal;
+	border-bottom: none;
     }
 }
 
@@ -270,6 +281,10 @@ code {
     }
     h4.first {
 	margin-top: 20px;
+	small {
+	    color: inherit;
+	    font-size: 1em;
+	}
     }
 
     .btn-download-wrapper {
@@ -280,6 +295,10 @@ code {
 	    padding: 3%;
 	    display: inline-block;
 	    margin-bottom: 5px;
+	}
+	small {
+	    display: block;
+	    font-size: 0.4em;
 	}
     }
     h2.description {
@@ -310,7 +329,7 @@ code {
 	}
 	@linuxcolor: #e43;
 	@windowscolor: #06a;
-	@maccolor: #0a6;
+	@maccolor: darkgrey;
 	.btn-build[href="#build-linux"] {
 	    background-color: @linuxcolor;
 	    &:hover {

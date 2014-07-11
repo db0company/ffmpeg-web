@@ -1,9 +1,10 @@
 
 <div id="download">
   <div class="btn-download-wrapper">
-    <a href="releases/ffmpeg-snapshot.tar.bz2" class="btn btn-success">
+    <a href="http://ffmpeg.org/releases/ffmpeg-2.2.4.tar.bz2" class="btn btn-success">
       <i class="fa fa-cloud-download"></i>
       Download
+      <small>ffmpeg-2.2.4.tar.bz2</small>
     </a>
   </div> <!-- btn-download-wrapper -->
 
@@ -121,7 +122,6 @@
 	</div> <!-- text -->
 
 	<br><br>
-	<hr>
 
 	<p>
 	  You can retrieve the source code through
@@ -132,16 +132,21 @@
 	<pre>git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg</pre>
 
 	<div>
-	  <a href="releases/ffmpeg-snapshot-git.tar.bz2" class="btn btn-success pull-right">
-	    <i class="fa fa-git"></i>
-	    Git Snapshot
-	  </a>
+	  <div class="pull-right">
+	    <a href="releases/ffmpeg-snapshot-git.tar.bz2" class="btn btn-success">
+	      <i class="fa fa-git"></i>
+	      Git Snapshot
+	    </a> &nbsp;
+	    <a href="http://git.videolan.org/?p=ffmpeg.git;a=tree" class="btn btn-success">
+	      Browse
+	    </a>
+	  </div>
 	  <small>
 	    Cannot access Git or wish to speed up the cloning and reduce the bandwidth usage?
 	  </small>
 	</div>
 
-	<hr>
+	<br><br>
 
 	<p class="info">
 	  FFmpeg has always been a very experimental and developer-driven project. It
@@ -154,13 +159,13 @@
 	<br><br>
 	<div class="row">
 	  <div class="col-sm-6">
-	    <a href="#repositories" class="btn btn-warning btn-block">
+	    <a href="#repositories" class="btn btn-success btn-block">
 	      <i class="fa fa-cubes"></i>
 	      Extra Repositories
 	    </a>
 	  </div> <!-- col -->
 	  <div class="col-sm-6">
-	    <a href="#releases" class="btn btn-warning btn-block">
+	    <a href="#releases" class="btn btn-success btn-block">
 	      <i class="fa fa-history"></i>
 	      Other Releases
 	    </a>

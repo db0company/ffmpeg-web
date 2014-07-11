@@ -9,13 +9,10 @@
     </div> <!-- col -->
     <div class="col-md-6">
       <div class="btn-download-wrapper">
-	<a href="releases/ffmpeg-snapshot.tar.bz2" class="btn btn-success">
+	<a href="download.html" class="btn btn-success">
 	  <i class="fa fa-cloud-download"></i>
 	  Download
-	</a><br>
-	<a href="download.html"><small>
-	    <i class="fa fa-arrow-circle-o-down"></i>
-	    more download options</small></a>
+	</a>
       </div> <!-- btn-download-wrapper -->
     </div> <!-- col -->
   </div> <!-- row -->
@@ -23,7 +20,7 @@
   <div class="well example">
     <h3>Converting <strong>videos</strong> and <strong>audios</strong> has never been so easy.
     </h3>
-    <pre><code>$ ffmpeg -i inputvideo.mkv outputvideo.mp4</code></pre>
+    <pre>$ ffmpeg -i inputvideo.mp4 outputvideo.avi</pre>
     <div class="text-right">
       <a href="about.html" class="btn btn-success btn-lg">Discover more</a>
     </div>
