@@ -94,4 +94,4 @@ cleanprod:
 	rm -rf $(PROD_TARGETS) $(PROD)/$(RSS_FILENAME) $(CSS_DIR) \
 	$(PROD)/img $(PROD)/js $(PROD)/robots.txt $(PROD)/fonts
 
-.PHONY: all clean prod cleanprod
+.PHONY: all clean cleanprod cleandev distclean predoc
