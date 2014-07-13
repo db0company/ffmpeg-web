@@ -16,6 +16,25 @@ Type `make distclean` to remove the production website generated files as well.
 
 -----
 
+/!\ None of the generated versions of the website contain the documentation.
+
+To generate the documentation pages:
+- Add the HTML wrappers to your environment:
+  $ export FFMPEG_HEADER1="$(cat src/template_head1 src/template_doctitle src/template_head_prod)"
+  $ export FFMPEG_HEADER2="$(cat src/template_head2 src/template_doctitle src/template_head3)"
+  $ export FFMPEG_FOOTER="$(cat src/template_footer1 src/template_footer_prod src/template_footer2)"
+- Get the main ffmpeg repo:
+  $ git clone git://source.ffmpeg.org/ffmpeg.git
+- Compile the documentation:
+  $ make doc
+- Copy the generated HTML files inside the website:
+  $ cp /path/to/ffmpeg/doc/*.html /path/to/ffmpeg-web/dist/
+
+In case of a major CSS update, update also the `style.min.css` file in the main FFmpeg repo:
+$ cat dist/css/bootstrap.min.css dist/css/style.min.css > /path/to/ffmpeg/doc/style.min.css
+
+-----
+
 [1] Install instructions, 3 methods:
 
 - Install everything globally (root required)
