@@ -1,14 +1,8 @@
-</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/simple-sidebar.css" />
-    <link rel="stylesheet" href="css/style.min.css" />
 
     <link href="/main.rss" rel="alternate" type="application/rss+xml" title="ffmpeg.org" />
     <link rel="shortcut icon" href="img/favicon3d.ico" />

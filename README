@@ -1,10 +1,36 @@
-This generates the ffmpeg.org website by fitting the navigation links onto
-source files and dropping the result in the htdocs/ directory.
+Generate the ffmpeg.org website.
 
-'make' generates the website, 'make clean' removes all generated files.
+-----
 
-Note: npm, bower and lessc are required.
-$ sudo aptitude install npm && sudo npm install -g bower && sudo npm install -g less && make
+npm, lessc and bower are required to generate the website.[1]
 
-If you wish to install those locally (root not required), run this script instead:
-$ ./local-npm.sh
+Generate the website using `make`. It will create 2 versions:
+- `htdocs` contains the version to use in development. Thanks to lessc, you can edit the
+  *.less sources and see the changes on your browser without having to reload it.
+- `dist` containes the website to use in production. It contains the minimum required files
+  only. It has to be up-to-date on the repo so the production server doesn't have to install
+  all the dependencies.
+
+`make clean` will only remove the development website generated files.
+Type `make distclean` to remove the production website generated files as well.
+
+-----
+
+[1] Install instructions, 3 methods:
+
+- Install everything globally (root required)
+  - Install npm from the packages or the sources: http://nodejs.org/
+  - Install lessc and bower using npm:
+    $ sudo npm install -g bower less
+
+- Install only npm globally
+  - Install npm from the packages or the sources: http://nodejs.org/
+  - Install lessc and bower in the current directory using npm:
+    $ npm install bower less
+  - Add the path to your environment:
+    $ export PATH=`pwd`/node_modules/bower/bin:`pwd`/node_modules/less/bin:$PATH
+
+- Install everything locally
+  - Run this script:
+    $ ./local-npm.sh
+  - Warning: it downloads and compiles npm from the sources, which takes a while

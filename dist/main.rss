@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>FFmpeg RSS</title>
+    <link>http://ffmpeg.org</link>
+    <description>FFmpeg RSS</description>
+    <atom:link href="http://ffmpeg.org/main.rss" rel="self" type="application/rss+xml" />
+  
+    <item>
+        <title>July 3, 2014, FFmpeg and the Outreach Program For Women</title>
+        <link>http://ffmpeg.org/index.html#opw01</link>
+        <guid>http://ffmpeg.org/index.html#opw01</guid>
+    </item>
+
+  
+    <item>
+        <title>June 29, 2014, FFmpeg 2.2.4, 2.1.5, 2.0.5, 1.2.7, 1.1.12, 0.10.14</title>
+        <link>http://ffmpeg.org/index.html#pr2.2.4</link>
+        <guid>http://ffmpeg.org/index.html#pr2.2.4</guid>
+    </item>
+
+  
+    <item>
+        <title>May 1, 2014, LinuxTag</title>
+        <link>http://ffmpeg.org/index.html#lt2014</link>
+        <guid>http://ffmpeg.org/index.html#lt2014</guid>
+    </item>
+
+  
+    <item>
+        <title>April 18, 2014, OpenSSL Heartbeat bug</title>
+        <link>http://ffmpeg.org/index.html#heartbleed</link>
+        <guid>http://ffmpeg.org/index.html#heartbleed</guid>
+    </item>
+
+  
+    <item>
+        <title>April 11, 2014, FFmpeg 2.2.1</title>
+        <link>http://ffmpeg.org/index.html#pr2.2.1</link>
+        <guid>http://ffmpeg.org/index.html#pr2.2.1</guid>
+    </item>
+
+  
+    <item>
+        <title>March 24, 2014, FFmpeg 2.2</title>
+        <link>http://ffmpeg.org/index.html#pr2.2</link>
+        <guid>http://ffmpeg.org/index.html#pr2.2</guid>
+    </item>
+
+  
+    <item>
+        <title>February 3, 2014, Chemnitzer Linux-Tage</title>
+        <link>http://ffmpeg.org/index.html#clt2014</link>
+        <guid>http://ffmpeg.org/index.html#clt2014</guid>
+    </item>
+
+  
+    <item>
+        <title>February 9, 2014, trac.ffmpeg.org / trac.mplayerhq.hu Security Breach</title>
+        <link>http://ffmpeg.org/index.html#trac_sec</link>
+        <guid>http://ffmpeg.org/index.html#trac_sec</guid>
+    </item>
+
+  
+    <item>
+        <title>November 12, 2013, FFmpeg RFP in Debian</title>
+        <link>http://ffmpeg.org/index.html#ffmpeg_rfp</link>
+        <guid>http://ffmpeg.org/index.html#ffmpeg_rfp</guid>
+    </item>
+
+  
+    <item>
+        <title>October 28, 2013, FFmpeg 2.1</title>
+        <link>http://ffmpeg.org/index.html#pr2.1</link>
+        <guid>http://ffmpeg.org/index.html#pr2.1</guid>
+    </item>
+
+</channel>
+</rss>
