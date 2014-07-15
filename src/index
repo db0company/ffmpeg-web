@@ -27,12 +27,12 @@
   </div> <!-- well -->
 
   <h1 id="news">
-    <div class="pull-right">
+    <span class="pull-right">
       <a href="main.rss"><strong><i class="fa fa-rss"></i></strong></a> &nbsp;
       <a href="https://plus.google.com/108003112428040046828?prsrc=3" rel="publisher" style="text-decoration:none;">
 	<strong><i class="fa fa-google-plus"></i></strong></a> &nbsp;
       <a href="https://twitter.com/FFmpeg"><strong><i class="fa fa-twitter"></i></strong></a>
-    </div>
+    </span>
     News
   </h1>
 
