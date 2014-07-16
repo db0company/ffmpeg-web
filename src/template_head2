@@ -26,7 +26,7 @@
 	      <li><a href="contact.html#MailingLists">Mailing Lists</a></li>
 	      <li><a href="contact.html#IRCChannels">IRC</a></li>
 	      <li><a href="contact.html#Forums">Forums</a></li>
-	      <li><a href="bugreports.html">Bug reports</a></li>
+	      <li><a href="bugreports.html">Bug Reports</a></li>
 	      <li><a href="http://trac.ffmpeg.org">Wiki</a></li>
 	      <li><a href="projects.html">Projects</a></li>
             </ul>
@@ -35,7 +35,7 @@
 	    <ul>
 	      <li><a href="download.html#get-sources">Source Code</a>
 	      <li><a href="http://fate.ffmpeg.org">FATE</a></li>
-	      <li><a href="http://coverage.ffmpeg.org">Coverage</a></li>
+	      <li><a href="http://coverage.ffmpeg.org">Code Coverage</a></li>
 	    </ul>
           </li>
           <li><a href="#">More</a>
