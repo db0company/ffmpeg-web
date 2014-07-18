@@ -82,7 +82,7 @@ $(BOWER_COMPONENTS): $(BOWER_PACKAGES)
 
 $(CSS_TARGET): $(CSS_SRCS)
 	mkdir -p $(CSS_DIR)
-	lessc --yui-compress $(CSS_SRCS) > $@
+	lessc --yui-compress --clean-css $(CSS_SRCS) > $@
 
 clean:	cleandev
 distclean: cleandev cleanprod
