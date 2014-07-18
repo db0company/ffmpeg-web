@@ -1,20 +1,17 @@
-Generate the ffmpeg.org website.
+ffmpeg.org official website
 
------
 
-npm, lessc and bower are required to generate the website.[1]
+GENERATE THE WEBSITE
+--------------------
 
-Generate the website using `make`. It will create 2 versions:
-- `htdocs` contains the version to use in development. Thanks to lessc, you can edit the
-  *.less sources and see the changes on your browser without having to reload it.
-- `dist` containes the website to use in production. It contains the minimum required files
-  only. It has to be up-to-date on the repo so the production server doesn't have to install
-  all the dependencies.
+`lessc` is required to generate the website.[1]
 
-`make clean` will only remove the development website generated files.
-Type `make distclean` to remove the production website generated files as well.
+Type `make` to generate the website.
+Type `make clean` to remove the generated files.
 
------
+
+GENERATE THE DOCUMENTATION
+--------------------------
 
 /!\ None of the generated versions of the website contain the documentation.
 
@@ -25,7 +22,7 @@ To generate the documentation pages:
   $ export FFMPEG_FOOTER="$(cat src/template_footer1 src/template_footer_prod src/template_footer2)"
 - Get the main ffmpeg repo:
   $ git clone git://source.ffmpeg.org/ffmpeg.git
-- Compile the documentation:
+- Compile the documentation using the ffmpeg main repo Makefile:
   $ make doc
 - Copy the generated HTML files inside the website:
   $ cp /path/to/ffmpeg/doc/*.html /path/to/ffmpeg-web/dist/
@@ -33,9 +30,29 @@ To generate the documentation pages:
 In case of a major CSS update, update also the `style.min.css` file in the main FFmpeg repo:
 $ cat dist/css/bootstrap.min.css dist/css/style.min.css > /path/to/ffmpeg/doc/style.min.css
 
+
+WEBSITE DEVELOPERS INSTRUCTIONS
+-------------------------------
+
+npm, lessc and bower are required to generate the website in development.[2]
+
+Type `make DEV=1` to generate the website for development.
+Type `make clean DEV=1` to remove the generated files.
+
+In development mode, the external dependencies are downloaded through bower.
+
+Thanks to lessc, you can edit the *.less sources and see the changes on your
+browser without having to reload it.
+
+
 -----
 
-[1] Install instructions, 3 methods:
+[1] lessc is available on the packages of some distributions.
+Otherwise, follow the instructions in [2].
+lessc depends on lots of stuff including npm, so if you wish to use a lighter version,
+you might want to check out the C++ version: http://www.vanderkroef.net/clessc.html
+
+[2] Install instructions, 3 methods:
 
 - Install everything globally (root required)
   - Install npm from the packages or the sources: http://nodejs.org/

@@ -3,62 +3,41 @@
 SRCS = about bugreports consulting contact donations documentation download \
        olddownload index legal projects shame security archive
 
-DEV = htdocs
-PROD = dist
+TARGET = htdocs
 
-GLOBAL_DEPS = src/template_head1 src/template_head2 src/template_head3 \
-              src/template_footer1 src/template_footer2
-
-DEV_DEPS = $(GLOBAL_DEPS) src/template_head_dev src/template_footer_dev
-PROD_DEPS = $(GLOBAL_DEPS) src/template_head_prod src/template_footer_prod
-
-DEV_HTML_FILES  = $(addsuffix .html,$(addprefix $(DEV)/,$(SRCS)))
-PROD_HTML_FILES = $(addsuffix .html,$(addprefix $(PROD)/,$(SRCS)))
-
-BOWER_PACKAGES = bower.json
-BOWER_COMPONENTS = $(DEV)/components
-
-CSS_SRCS = $(DEV)/less/style.less
-CSS_DIR = $(PROD)/css
-CSS_TARGET = $(CSS_DIR)/style.min.css
+HTML_TARGETS  = $(addsuffix .html,$(addprefix $(TARGET)/,$(SRCS)))
 
 RSS_FILENAME = main.rss
-RSS_TARGET = $(DEV)/$(RSS_FILENAME)
+RSS_TARGET = $(TARGET)/$(RSS_FILENAME)
 
-DEV_TARGETS = $(BOWER_COMPONENTS) $(DEV_HTML_FILES) $(RSS_TARGET)
-PROD_TARGETS = $(PROD_HTML_FILES) $(CSS_TARGET)
+CSS_SRCS = src/less/style.less
+CSS_TARGET = $(TARGET)/css/style.min.css
+LESS_TARGET = $(TARGET)/style.less
 
-all: $(PROD)
+ifdef DEV
+BOWER_PACKAGES = bower.json
+BOWER_COMPONENTS = $(TARGET)/components
 
-dev: $(DEV_TARGETS)
+SUFFIX=dev
+TARGETS = $(BOWER_COMPONENTS) $(LESS_TARGET) $(HTML_TARGETS) $(RSS_TARGET)
+else
+SUFFIX=prod
+TARGETS = $(HTML_TARGETS) $(CSS_TARGET) $(RSS_TARGET)
+endif
 
-$(PROD): dev $(PROD_TARGETS)
-	@echo "Copy production files from development files"
-	@cp $(RSS_TARGET) $(PROD)/
-	@cp -r $(DEV)/js $(PROD)
-	@cp -r $(DEV)/robots.txt $(PROD)
-	@cp -r $(BOWER_COMPONENTS)/font-awesome/fonts $(PROD)
-	@cp $(BOWER_COMPONENTS)/font-awesome/css/font-awesome.min.css $(CSS_DIR)/
-	@cp $(BOWER_COMPONENTS)/bootstrap/dist/css/bootstrap.min.css $(CSS_DIR)/
-	@cp $(BOWER_COMPONENTS)/bootstrap/dist/js/bootstrap.min.js $(PROD)/js/
-	@cp $(BOWER_COMPONENTS)/jquery/dist/jquery.min.js $(PROD)/js/
-	@cp $(DEV)/css/simple-sidebar.css $(CSS_DIR)/
-	@mkdir -p $(PROD)/img/
-	@cp $(DEV)/img/ffmpeg3d_white_20.png $(PROD)/img/
-	@cp $(DEV)/img/favicon3d.ico $(PROD)/img/
+DEPS = src/template_head1 src/template_head2 src/template_head3 src/template_head_$(SUFFIX) \
+       src/template_footer1 src/template_footer2 src/template_footer_$(SUFFIX)
 
-$(DEV)/%.html: src/% src/%_title src/%_js $(DEV_DEPS)
-	cat src/template_head1 $<_title src/template_head_dev \
+all: $(TARGET)
+
+$(TARGET): $(TARGETS)
+
+$(TARGET)/%.html: src/% src/%_title src/%_js $(DEPS)
+	cat src/template_head1 $<_title src/template_head_$(SUFFIX) \
 	src/template_head2 $<_title src/template_head3 $< \
-	src/template_footer1 src/template_footer_dev $<_js src/template_footer2 > $@
+	src/template_footer1 src/template_footer_$(SUFFIX) $<_js src/template_footer2 > $@
 
-$(PROD)/%.html: src/% src/%_title src/%_js $(PROD_DEPS)
-	@mkdir -p $(PROD)
-	cat src/template_head1 $<_title src/template_head_prod \
-	src/template_head2 $<_title src/template_head3 $< \
-	src/template_footer1 src/template_footer_prod $<_js src/template_footer2 > $@
-
-$(RSS_TARGET): $(DEV)/index.html
+$(RSS_TARGET): $(TARGET)/index.html
 	echo '<?xml version="1.0" encoding="UTF-8" ?>' > $@
 	echo '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">' >> $@
 	echo '<channel>' >> $@
@@ -76,22 +55,29 @@ X' >> $@
 	echo '</channel>' >> $@
 	echo '</rss>' >> $@
 
-
 $(BOWER_COMPONENTS): $(BOWER_PACKAGES)
 	bower install
+	@cp -r $(BOWER_COMPONENTS)/font-awesome/fonts $(TARGET)/
+	@cp $(BOWER_COMPONENTS)/font-awesome/css/font-awesome.min.css $(TARGET)/css/
+	@cp $(BOWER_COMPONENTS)/bootstrap/dist/css/bootstrap.min.css $(TARGET)/css/
+	@cp $(BOWER_COMPONENTS)/bootstrap/dist/js/bootstrap.min.js $(TARGET)/js/
+	@cp $(BOWER_COMPONENTS)/jquery/dist/jquery.min.js $(TARGET)/js/
 
 $(CSS_TARGET): $(CSS_SRCS)
-	mkdir -p $(CSS_DIR)
-	lessc --yui-compress --clean-css $(CSS_SRCS) > $@
+	lessc $(LESSC_OPTIONS) $(CSS_SRCS) > $@
 
-clean:	cleandev
-distclean: cleandev cleanprod
+$(LESS_TARGET): $(CSS_SRCS)
+	@rm -f $@
+	ln -s $(CSS_SRCS) $@
 
-cleandev:
-	rm -rf $(DEV_TARGETS)
+clean:	clean
+	rm -rf $(TARGETS)
 
-cleanprod:
-	rm -rf $(PROD_TARGETS) $(PROD)/$(RSS_FILENAME) $(CSS_DIR) \
-	$(PROD)/img $(PROD)/js $(PROD)/robots.txt $(PROD)/fonts
+distclean:
+	rm -rf $(TARGET)/fonts
+	rm -f $(TARGET)/css/font-awesome.min.css
+	rm -f $(TARGET)/css/bootstrap/dist/css/bootstrap.min.css
+	rm -f $(TARGET)/js/bootstrap.min.js
+	rm -f $(TARGET)/js/jquery.min.js
 
-.PHONY: all clean cleanprod cleandev distclean predoc
+.PHONY: all clean clean distclean
