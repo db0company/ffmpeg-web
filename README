@@ -4,7 +4,7 @@ ffmpeg.org official website
 GENERATE THE WEBSITE
 --------------------
 
-`lessc` is required to generate the website.[1]
+`lessc` is required to generate CSS of the website.[1]
 
 Type `make` to generate the website.
 Type `make clean` to remove the generated files.
@@ -27,8 +27,9 @@ To generate the documentation pages:
 - Copy the generated HTML files inside the website:
   $ cp /path/to/ffmpeg/doc/*.html /path/to/ffmpeg-web/dist/
 
-In case of a major CSS update, update also the `style.min.css` file in the main FFmpeg repo:
-$ cat dist/css/bootstrap.min.css dist/css/style.min.css > /path/to/ffmpeg/doc/style.min.css
+In case of a major CSS update, please also update the `style.min.css` file in
+the main FFmpeg repo:
+  $ cat dist/css/bootstrap.min.css dist/css/style.min.css > /path/to/ffmpeg/doc/style.min.css
 
 
 WEBSITE DEVELOPERS INSTRUCTIONS
@@ -52,7 +53,7 @@ Otherwise, follow the instructions in [2].
 lessc depends on lots of stuff including npm, so if you wish to use a lighter version,
 you might want to check out the C++ version: http://www.vanderkroef.net/clessc.html
 
-[2] Install instructions, 3 methods:
+[2] Install instructions, 2 methods:
 
 - Install everything globally (root required)
   - Install npm from the packages or the sources: http://nodejs.org/
@@ -65,8 +66,3 @@ you might want to check out the C++ version: http://www.vanderkroef.net/clessc.h
     $ npm install bower less
   - Add the path to your environment:
     $ export PATH=`pwd`/node_modules/bower/bin:`pwd`/node_modules/less/bin:$PATH
-
-- Install everything locally
-  - Run this script:
-    $ ./local-npm.sh
-  - Warning: it downloads and compiles npm from the sources, which takes a while
