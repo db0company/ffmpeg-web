@@ -31,17 +31,17 @@
         <div class="os-selector">
           <div class="row">
             <div class="col-xs-4">
-              <a class="btn-build active" href="#build-linux">
+              <a class="btn-build active" href="#LinuxBuilds">
                 <i class="fa fa-5x fa-fw fa-linux"></i>
               </a>
             </div> <!-- col -->
             <div class="col-xs-4">
-              <a class="btn-build" href="#build-windows">
+              <a class="btn-build" href="#WindowsBuilds">
                 <i class="fa fa-5x fa-fw fa-windows"></i>
               </a>
             </div> <!-- col -->
             <div class="col-xs-4">
-              <a class="btn-build" href="#build-mac">
+              <a class="btn-build" href="#MacOSXBuilds">
                 <i class="fa fa-5x fa-fw fa-apple"></i>
               </a>
             </div> <!-- col -->
@@ -49,7 +49,7 @@
         </div> <!-- os-selector -->
 
         <div class="tab-content">
-          <div id="build-linux" class="tab-pane active">
+          <div id="LinuxBuilds" class="tab-pane active">
 
             <h3>Linux Packages</h3>
             <div class="list-group">
@@ -77,7 +77,7 @@
             </div> <!-- list-group -->
 
           </div> <!-- build -->
-          <div id="build-windows" class="tab-pane active">
+          <div id="WindowsBuilds" class="tab-pane active">
 
             <h3>Windows Packages</h3>
 
@@ -88,7 +88,7 @@
             </div> <!-- list-group -->
 
           </div> <!-- build -->
-          <div id="build-mac" class="tab-pane active">
+          <div id="MacOSXBuilds" class="tab-pane active">
 
             <h3>Mac OS X Packages</h3>
 
@@ -109,6 +109,7 @@
     </div> <!-- col -->
 
     <div class="col-md-6">
+      <span id="GettingFFmpeg"></span>
       <div class="well" id="get-sources">
         <h3>
           <i class="fa fa-eye"></i>
